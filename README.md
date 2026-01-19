@@ -1,6 +1,29 @@
 # RDMC Registry Service
 
-A small FastAPI-based service to ingest and index RDMC (Research Data Management Container) manifests.
+A FastAPI-based microservice for ingesting, indexing, and retrieving RDMC
+(Research Data Management Container) manifests.
+
+The service is **fully deployed on Render**, including both the **API** and the
+**PostgreSQL database**.
+
+
+##  Deployment (Render)
+
+### Live API
+https://rdmc-registry-service.onrender.com
+
+###  API Documentation
+- **Swagger UI:** https://rdmc-registry-service.onrender.com/docs
+- **ReDoc:** https://rdmc-registry-service.onrender.com/redoc
+- **OpenAPI JSON:** https://rdmc-registry-service.onrender.com/openapi.json
+
+###  Database
+The PostgreSQL database is hosted on **Render** and accessed via environment
+variables.
+
+
+
+##  Repository Structure
 
 This repository contains:
 - `api.py` - FastAPI router with endpoints for ingesting and querying RDMCs.
@@ -89,33 +112,6 @@ This project does not include automatic migrations. For production use, add Alem
 from db import engine
 from models import Base
 Base.metadata.create_all(bind=engine)
-```
-
-
-## Example requests
-
-Health check (PowerShell / curl):
-
-```powershell
-curl http://127.0.0.1:8000/
-```
-
-Ingest example (replace `manifest.json` with your RDMC JSON file):
-
-```powershell
-curl -X POST http://127.0.0.1:8000/rdmcs -H "Content-Type: application/json" -d @manifest.json
-```
-
-List RDMCs:
-
-```powershell
-curl http://127.0.0.1:8000/rdmcs
-```
-
-Find by contributor ORCID:
-
-```powershell
-curl "http://127.0.0.1:8000/rdmcs/by-contributor?orcid=0000-0000-0000-0000"
 ```
 
 
