@@ -119,27 +119,9 @@ curl "http://127.0.0.1:8000/rdmcs/by-contributor?orcid=0000-0000-0000-0000"
 ```
 
 
-## Tests
-
-There are no test files included in this repository yet. Recommended next steps:
-- Add unit tests for `rdmc_mapping.py` (happy path + malformed manifests).
-- Add integration tests for `api.py` using FastAPI's TestClient and a temporary test database.
-
-
-## Next steps / improvements
-
-- Add Alembic migrations for robust schema management.
-- Harden input validation and manifest schema checks (the `rdmc_mapping` module uses permissive lookups).
-- Add unit and integration tests.
-- Add CI workflow that runs linting and tests.
-
-
 ## License and contributing
 
 - This project is licensed under the MIT License — see the included `LICENSE` file for details.
 
-- If you plan to publish or share this project, consider adding a `CONTRIBUTING.md` file that explains how to contribute, coding standards, and how to run tests. If you'd like, I can add a starter `CONTRIBUTING.md` for you.
 
-
-## Contact / support
-
+- Contributions are welcome! Please open issues or pull requests on GitHub.
